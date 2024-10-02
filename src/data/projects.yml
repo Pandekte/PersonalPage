@@ -4,21 +4,20 @@
   resume_description: >
     Javascript, Bootstrap, published in Chrome Web Store.
   url: https://chromewebstore.google.com/detail/dashtab/ojpihaakeniapmjfbgnieieecpejlhid
-  image: "/assets/img/DashTab.png"
+  image: "assets/img/DashTab.png"
 
-# Add more project entries as needed
 - title: Sleep Guardian
   description: >
     Power down your monitors precisely when you need it to.
   resume_description: >
     C#, .Net, published in GitHub.
   url: https://github.com/Pandekte/SleepGuardianPublic
-  image: "/assets/img/SleepGuardian.png"
-# Add more project entries as needed
+  image: "assets/img/SleepGuardian.png"
+
 - title: Motivation Tool
   description: >
     Inspirational quotes are displayed alongside age clock.
   resume_description: >
     React, TypeScript, published in Chrome Web Store.
   url: https://chromewebstore.google.com/detail/motivation-tool-daily-quo/omcalcehddblccgmlmjdjapmahcibojj
-  image: "/assets/img/Motivation.png"
+  image: "assets/img/Motivation.png"

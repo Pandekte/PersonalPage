@@ -8,7 +8,7 @@ export default function Heading({ children }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const fontPath = "/assets/fonts/Roboto-Regular.ttf"; // Adjust the path to your font file
+    const fontPath = "assets/fonts/Roboto-Regular.ttf"; // Adjust the path to your font file
 
     let observer;
 

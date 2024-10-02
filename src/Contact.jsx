@@ -50,7 +50,7 @@ export default function Contact() {
         <a
           id="resume-dl"
           ref={buttonRef}
-          href="/assets/Tomasz_Marczynski_Resume.pdf"
+          href="assets/Tomasz_Marczynski_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
