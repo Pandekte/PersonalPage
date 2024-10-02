@@ -1,0 +1,45 @@
+// src/sass/heading.scss
+
+@use "./variables" as *;
+
+.heading {
+  svg {
+    width: 15vh;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  path {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+  }
+
+  @keyframes borderani {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes stokeFill {
+    to {
+      fill: #fff;
+      stroke: transparent;
+    }
+  }
+
+  /* Tablet Adjustments */
+  @include mq($tablet) {
+    svg {
+      width: 10vh; // Reduced width for tablets
+    }
+  }
+
+  /* Mobile Adjustments */
+  @include mq($mobile) {
+    svg {
+      width: 8vh; // Further reduced width for mobile devices
+    }
+  }
+}

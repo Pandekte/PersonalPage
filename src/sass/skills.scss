@@ -1,0 +1,103 @@
+// src/sass/skills.scss
+
+@use "./variables" as *;
+
+.skills {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+    max-width: 70vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    // Placeholder styling
+    .sortable-placeholder {
+      background-color: lighten($bg-color, 10%);
+      border: 2px dashed rgba($text-color, 0.4);
+      height: 2.5rem; // Adjust based on your li height
+      border-radius: 8px;
+      width: 150px; // Adjust based on your li width
+    }
+
+    // Chosen item styling
+    .sortable-chosen {
+      background-color: lighten($bg-color, 5%);
+    }
+
+    // Dragged item styling
+    .sortable-drag {
+      opacity: 0.8;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background-color: $bg-color;
+      border: 1px solid rgba($text-color, 0.4);
+      border-radius: 8px;
+      cursor: grab;
+      transition: transform 0.2s, opacity 0.2s;
+      position: relative; // For focus outline
+
+      &:active {
+        cursor: grabbing;
+        transform: scale(1.04);
+      }
+
+      &:focus {
+        outline: 2px solid darken($bg-color, 20%);
+      }
+
+      /* Removed .drag-handle styles since it's no longer present */
+
+      svg {
+        margin-right: 0.5rem;
+      }
+
+      // Responsive Adjustments
+      @media (max-width: 1200px) {
+        flex: 1 1 25%;
+        max-width: 25%;
+      }
+
+      @media (max-width: 900px) {
+        flex: 1 1 33.33%;
+        max-width: 33.33%;
+      }
+
+      @media (max-width: 600px) {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  // Visually hidden class for accessibility
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

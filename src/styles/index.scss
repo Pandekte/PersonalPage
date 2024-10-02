@@ -1,0 +1,108 @@
+/* Variables */
+$primary-color: #5f77f3;
+$background-color: #f0f0f0;
+$text-color: #333;
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+header,
+footer {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+
+  li {
+    margin-right: 1rem;
+  }
+
+  a {
+    color: #fff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+main {
+  padding: 2rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: calc(33% - 2rem);
+
+  img {
+    max-width: 100%;
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.skills .skill-category {
+  margin-bottom: 1rem;
+
+  h3 {
+    border-bottom: 1px solid $primary-color;
+    padding-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin: 0.25rem 0;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}

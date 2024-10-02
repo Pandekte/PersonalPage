@@ -1,0 +1,142 @@
+// src/components/FerrisWheel/sass/ferriswheel.scss
+
+@use "./variables" as *;
+
+// Variables for easy adjustments
+$animation-duration: 20s;
+$number-of-cabins: 16; // Updated to 16
+$cabin-size: 15%;
+$cabin-spacing: 1rem;
+$wheel-border-width: 10px;
+$axle-size: 10%;
+$spin-timing-function: linear;
+$spin-reverse: reverse;
+$lightblue-hover: darken($lightblue, 10%);
+$text-color-hover: darken($text-color, 10%);
+
+.ferriswheel {
+  position: fixed;
+  bottom: 1rem; // Added some spacing from the edge
+  right: 1rem;
+  width: 25%;
+  max-width: 20rem;
+  height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  will-change: transform;
+
+  .wheel {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; // Maintain aspect ratio
+    border: $wheel-border-width solid $lightblue;
+    border-radius: 50%;
+    animation: spin $animation-duration $spin-timing-function infinite;
+    box-sizing: border-box;
+    will-change: transform;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    .axle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $axle-size;
+      height: $axle-size;
+      background-color: $bg-color;
+      border: 5px solid $lightblue;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      will-change: transform;
+    }
+
+    .cabins {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: center;
+      animation: spin-reverse $animation-duration $spin-timing-function infinite
+        $spin-reverse;
+      will-change: transform;
+
+      .cabin {
+        position: absolute;
+        width: $cabin-size;
+        height: $cabin-size;
+        background-color: $lightblue;
+        border: 2px solid $text-color;
+        border-radius: 50%;
+        transform-origin: 50% calc(100% + #{$cabin-spacing});
+        transition: background-color 0.3s, border-color 0.3s;
+        will-change: transform, background-color, border-color;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+
+        // Position each cabin around the wheel
+        @for $i from 1 through $number-of-cabins {
+          &.cabin-#{$i} {
+            transform: unquote(
+              "rotate(calc(360deg / #{$number-of-cabins} * #{$i})) translate(calc(50% + #{$cabin-spacing}), 0) rotate(calc(-360deg / #{$number-of-cabins} * #{$i}))"
+            );
+
+            &:hover,
+            &:focus {
+              background-color: $lightblue-hover;
+              border-color: $text-color-hover;
+              outline: none; // Remove default outline
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+            // Make cabins focusable
+            &:focus {
+              outline: 2px solid $text-color-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+// Responsive Adjustments
+@include mq($mobile) {
+  .ferriswheel {
+    width: 35%;
+    max-width: 15rem;
+    height: 35vh;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    // Optionally, adjust other properties for better mobile display
+  }
+}
+
+@include mq($tablet) {
+  .ferriswheel {
+    width: 30%;
+    max-width: 18rem;
+    height: 45vh;
+  }
+}

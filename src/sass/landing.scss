@@ -1,0 +1,77 @@
+// src/sass/landing.scss
+
+@use "./variables" as *;
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; // Full viewport height
+  background-color: $bg-color;
+  color: $text-color;
+  text-align: center;
+  padding: 2rem;
+
+  h1 {
+    font-family: $font;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  .arrow-button {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: $lightblue;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $lightblue-hover;
+    }
+  }
+}
+
+/* Keyframes for Bouncing Animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Responsive Adjustments (Optional) */
+@include mq($mobile) {
+  .landing {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .arrow-button {
+      font-size: 1.5rem;
+    }
+  }
+}

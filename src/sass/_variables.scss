@@ -1,0 +1,56 @@
+// src/sass/_variables.scss
+
+/* Font Family */
+$font: "Poppins", sans-serif;
+$handwriting: "Caveat", cursive;
+
+/* Colors */
+$bg-color: #272727;
+$text-color: #d9d9d9;
+$lightblue: #5f77f3;
+$line-color: #ffffff; // New color for connecting lines
+$color-body-background: #8ed0b2;
+$color-seat-top: #fcf4c6;
+
+// Define a map for seat colors
+$seat-colors: (
+  orange: #ed801b,
+  green: #2c9d5d,
+  yellow: #fec949,
+  white: #fcf4c6,
+  blue: #4a9378,
+  black: #224b4b,
+);
+
+$color-stroke-main: #477e76;
+$color-stroke-circle: #052730;
+$color-stroke-polyline: #55b88a;
+
+/* Breakpoint Definitions */
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+/* Other Shared Variables */
+$animation-duration: 20s;
+$number-of-cabins: 16;
+$cabin-size: 15%;
+$cabin-spacing: 1rem;
+$wheel-border-width: 10px;
+$axle-size: 10%;
+$spin-timing-function: linear;
+$spin-reverse: reverse;
+$lightblue-hover: darken($lightblue, 10%);
+$text-color-hover: darken($text-color, 10%);
+
+/* Media Query Mixin */
+@mixin mq($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+/* Breakpoint Definitions */
+$mobile: 767px;
+$tablet: 1024px;
+$desktop: 1200px;

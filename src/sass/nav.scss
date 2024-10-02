@@ -1,0 +1,95 @@
+/* src/sass/nav.scss */
+
+@use "./variables" as *;
+
+#mainNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 100vh;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 1rem 0;
+
+      a {
+        position: relative; // Needed for the pseudo-element
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $text-color;
+        font-size: 1.2rem;
+        text-decoration: none; // Remove default underline
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: color 0.3s, background-color 0.3s;
+
+        span {
+          margin-top: 0.5rem;
+          font-size: 0.8rem;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        /* Pseudo-element for the underline */
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px; // Position it slightly below the text
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $lightblue;
+          transition: width 0.3s ease-in-out;
+        }
+
+        /* FontAwesome Icon */
+        svg {
+          transition: transform 0.3s;
+        }
+
+        &:hover,
+        &.active {
+          color: $lightblue;
+          background-color: rgba(95, 119, 243, 0.1);
+
+          span {
+            opacity: 1;
+          }
+
+          &::after {
+            width: 100%;
+          }
+
+          svg {
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Media queries for mobile and tablet to hide the nav */
+@include mq($mobile) {
+  #mainNav {
+    display: none;
+  }
+}
+
+@include mq($tablet) {
+  #mainNav {
+    display: none;
+  }
+}

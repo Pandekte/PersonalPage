@@ -1,0 +1,104 @@
+// src/sass/projects.scss
+
+@use "./variables" as *;
+
+.projects {
+  .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+
+        .card {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.75),
+              rgba(0, 0, 0, 0.75)
+            ),
+            var(--bg-img);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: $bg-color;
+          background-size: cover;
+          color: $text-color;
+          width: clamp(15rem, 16vw, 20rem);
+          height: 200px;
+          padding: 1rem;
+          border-radius: 12px;
+          text-align: center;
+          transition: transform 0.3s, box-shadow 0.3s;
+
+          &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          }
+
+          h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+          }
+
+          p {
+            font-size: 1rem;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateY(0em);
+            color: lighten($text-color, 20%);
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            h4 {
+              transform: translateY(0);
+            }
+            p {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile and Tablet Adjustments */
+@include mq($tablet) {
+  .projects {
+    .projects-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .projects-list li {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    .projects-list li a .card {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      padding: 1.5rem;
+      height: 18vh;
+
+      h4 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
