@@ -1,12 +1,15 @@
 {
   "name": "your-portfolio",
+  "homepage": "https://github.com/Pandekte/personal-page/",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node generateResume.js",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -29,6 +32,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "gh-pages": "^6.1.1",
     "sass": "^1.79.4",
     "vite": "^3.1.0"
   }
