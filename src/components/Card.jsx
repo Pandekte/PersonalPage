@@ -1,6 +1,4 @@
 // src/components/Card.jsx
-import React from "react";
-
 export default function Card({ title, description, image, url }) {
   return (
     <li>
@@ -8,7 +6,7 @@ export default function Card({ title, description, image, url }) {
         <div
           className="card"
           style={{
-            "--bg-img": `url(${import.meta.env.BASE_URL}${image})`,
+            "--bg-img": `url(${image})`,
           }}
         >
           <h4>{title}</h4>
