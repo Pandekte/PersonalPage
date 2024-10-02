@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 import ViteYaml from "@modyfi/vite-plugin-yaml";
 
 export default defineConfig({
-  base: "/personal-page/",
+  base: "/PersonalPage/",
   plugins: [react(), ViteYaml()],
   build: {
     rollupOptions: {
