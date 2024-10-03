@@ -12,7 +12,7 @@ export default function Landing() {
         <span>Tomasz Marczyński</span>
       </h1>
       <p>
-        <span role="img" aria-label="waving hand">
+        <span className="waving-hand" role="img" aria-label="waving hand">
           👋
         </span>{" "}
         Hey! I'm Tomasz Marczyński, a full-stack developer.
