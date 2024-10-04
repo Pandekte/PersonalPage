@@ -1,17 +1,19 @@
 Languages:
   - JavaScript
   - TypeScript
-  - Python
+  - HTML
+  - CSS
+  - SCSS
   - C#
+  - SQL
+  - Python
 Frameworks:
   - React
   - Node.js
-  - Express
   - .NET
   - Django
 Tools:
   - Git
-  - Windows
   - Linux
   - VSCode
   - CMS

@@ -75,12 +75,20 @@ const skillIcons = {
   Windows: faWindows, // FontAwesome icon
 };
 
-export default function SkillsList() {
-  // Flatten the skills data if it's nested
-  const initialSkills = Object.values(skillsData).flat();
+// Define the desired order of categories
+const CATEGORY_ORDER = ["Languages", "Frameworks", "Tools"];
 
-  // State to manage the order of skills
-  const [skills, setSkills] = useState(initialSkills);
+export default function SkillsList() {
+  // Initialize skills based on the defined category order
+  const initializeSkills = () => {
+    return CATEGORY_ORDER.reduce((accumulator, category) => {
+      const categorySkills = skillsData[category] || [];
+      return [...accumulator, ...categorySkills];
+    }, []);
+  };
+
+  // Initialize the skills state
+  const [skills, setSkills] = useState(initializeSkills());
 
   // Reference to the list DOM element
   const skillsListRef = useRef(null);
@@ -105,8 +113,6 @@ export default function SkillsList() {
         newSkills.splice(evt.newIndex, 0, movedItem);
         // Update state
         setSkills(newSkills);
-        // Persist the new order (optional)
-        saveOrder(newSkills);
         // Announce the change for accessibility
         announce(`${movedItem} moved to position ${evt.newIndex + 1}`);
       },
@@ -117,34 +123,6 @@ export default function SkillsList() {
       sortable.destroy();
     };
   }, [skills]);
-
-  // Function to save the new order to localStorage (optional)
-  const saveOrder = (orderedSkills) => {
-    const order = orderedSkills.map((skill) => skill);
-    localStorage.setItem("skillsOrder", JSON.stringify(order));
-  };
-
-  // Function to load the order from localStorage (optional)
-  const loadOrder = () => {
-    const savedOrder = JSON.parse(localStorage.getItem("skillsOrder"));
-    if (savedOrder && Array.isArray(savedOrder)) {
-      // Ensure that all saved skills exist in the initial skills
-      const orderedSkills = savedOrder.filter((skill) =>
-        initialSkills.includes(skill)
-      );
-      // If some skills are missing, append them
-      const missingSkills = initialSkills.filter(
-        (skill) => !orderedSkills.includes(skill)
-      );
-      setSkills([...orderedSkills, ...missingSkills]);
-    }
-  };
-
-  useEffect(() => {
-    // Load saved order on component mount
-    loadOrder();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // Handle keyboard reordering
   const handleKeyDown = (e, index) => {
@@ -157,7 +135,6 @@ export default function SkillsList() {
         newSkills[index - 1],
       ];
       setSkills(newSkills);
-      saveOrder(newSkills);
       // Announce the change
       announce(`${skills[index]} moved to position ${index}`);
     } else if (e.key === "ArrowDown" && index < skills.length - 1) {
@@ -169,7 +146,6 @@ export default function SkillsList() {
         newSkills[index + 1],
       ];
       setSkills(newSkills);
-      saveOrder(newSkills);
       // Announce the change
       announce(`${skills[index]} moved to position ${index + 2}`);
     }
@@ -195,11 +171,9 @@ export default function SkillsList() {
             key={index}
             data-id={skill}
             role="option"
-            aria-grabbed="false"
             tabIndex="0"
             onKeyDown={(e) => handleKeyDown(e, index)}
           >
-            {/* Removed the drag handle */}
             {/* Render the appropriate icon */}
             <FontAwesomeIcon icon={skillIcons[skill] || faDatabase} />
             {skill}

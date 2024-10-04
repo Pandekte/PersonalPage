@@ -6,7 +6,7 @@ import Heading from "./components/Heading";
 export default function Skills() {
   return (
     <section className="skills" id="skills">
-      <Heading animationDuration="3s">Skills</Heading>
+      <Heading animationDuration="2s">Skills</Heading>
       <SkillsList />
     </section>
   );
