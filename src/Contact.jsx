@@ -26,7 +26,7 @@ export default function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <Heading>Contact</Heading>
+      <Heading animationDuration="11s">Contact</Heading>
       <div className="container">
         <p className="float-text">{contact.email}</p>
         <div className="socials">

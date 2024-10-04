@@ -1,9 +1,10 @@
 // src/components/Heading.jsx
 import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import opentype from "opentype.js";
 import "../sass/heading.scss"; // Ensure this file exists and contains your styles
 
-export default function Heading({ children }) {
+export default function Heading({ children, animationDuration = "5s" }) {
   const svgRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -14,7 +15,7 @@ export default function Heading({ children }) {
 
     // Function to initialize the SVG and animations
     const initSvg = (font) => {
-      const fontSize = 72;
+      const fontSize = 72; // You can adjust this value for uniform size
       const x = 0;
       const y = fontSize;
 
@@ -44,14 +45,43 @@ export default function Heading({ children }) {
           pathElement.style.stroke = "#fff";
           pathElement.style.strokeWidth = "1px";
 
+          // Apply dynamic animation durations
+          // borderani animation
+          pathElement.style.setProperty(
+            "--animation-duration-borderani",
+            animationDuration
+          );
+          // strokeFill animation starts after borderani completes
+          const borderaniDuration = parseFloat(animationDuration);
+          const strokeFillDelay =
+            borderaniDuration > 1 ? `${borderaniDuration - 1}s` : "0s";
+          pathElement.style.setProperty(
+            "--animation-duration-strokeFill",
+            borderaniDuration > 1
+              ? `${borderaniDuration - 1}s`
+              : animationDuration
+          );
+          pathElement.style.setProperty(
+            "--animation-delay-strokeFill",
+            strokeFillDelay
+          );
+
+          // Define the animation using CSS variables
+          pathElement.style.animation = `
+            borderani var(--animation-duration-borderani) forwards,
+            strokeFill var(--animation-duration-strokeFill) var(--animation-delay-strokeFill) forwards
+          `;
+
+          // Ensure animations are paused initially
+          pathElement.style.animationPlayState = "paused";
+
           // Set up the Intersection Observer
           observer = new IntersectionObserver(
             (entries) => {
               entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                   // Start the animation
-                  pathElement.style.animation =
-                    "borderani 5s forwards, stokeFill 4s 1s forwards";
+                  pathElement.style.animationPlayState = "running";
 
                   // Once the animation has started, unobserve the element
                   observer.unobserve(containerRef.current);
@@ -82,7 +112,7 @@ export default function Heading({ children }) {
         observer.unobserve(containerRef.current);
       }
     };
-  }, [children]);
+  }, [children, animationDuration]);
 
   return (
     <div className="heading" ref={containerRef}>
@@ -90,3 +120,8 @@ export default function Heading({ children }) {
     </div>
   );
 }
+
+Heading.propTypes = {
+  children: PropTypes.node.isRequired,
+  animationDuration: PropTypes.string,
+};

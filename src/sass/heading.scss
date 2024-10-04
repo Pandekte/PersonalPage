@@ -6,6 +6,7 @@
   svg {
     width: 15vh;
     height: auto;
+    max-height: 4vh;
     display: block;
     margin: 0 auto;
   }
@@ -17,12 +18,31 @@
   }
 
   @keyframes borderani {
-    to {
-      stroke-dashoffset: 0;
+    0% {
+      stroke-dashoffset: 100%;
+    }
+    20% {
+      stroke-dashoffset: 80%;
+    }
+    40% {
+      stroke-dashoffset: 60%;
+    }
+    60% {
+      stroke-dashoffset: 40%;
+    }
+    80% {
+      stroke-dashoffset: 20%;
+    }
+    100% {
+      stroke-dashoffset: 0%;
     }
   }
 
-  @keyframes stokeFill {
+  @keyframes strokeFill {
+    from {
+      fill: transparent;
+      stroke: #fff;
+    }
     to {
       fill: #fff;
       stroke: transparent;

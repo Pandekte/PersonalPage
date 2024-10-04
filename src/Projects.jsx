@@ -32,7 +32,7 @@ export default function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <Heading>Projects</Heading>
+      <Heading animationDuration="6s">Projects</Heading>
       <ul className="projects-list" ref={projectsList}>
         {projects
           .filter((p) => p.description)
