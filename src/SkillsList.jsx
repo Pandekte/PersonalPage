@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Sortable from "sortablejs";
-import skillsData from "./data/skills.yml"; // Ensure correct path
+import skillsData from "./data/skills.yml";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -17,7 +17,7 @@ import {
   faReact,
   faSass,
   faPython,
-  faWindows, // Import faWindows from FontAwesome
+  faWindows,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -31,6 +31,7 @@ import {
   DotNetIcon,
   CSharpIcon,
   DjangoIcon,
+  TailwindIcon,
 } from "./components/CustomIcons";
 
 // Add custom icons to the library
@@ -44,7 +45,8 @@ library.add(
   ExpressIcon,
   DotNetIcon,
   CSharpIcon,
-  DjangoIcon
+  DjangoIcon,
+  TailwindIcon
 );
 
 // Create the skillIcons mapping
@@ -59,7 +61,7 @@ const skillIcons = {
   "C++": ["custom", "cpp"],
   Java: faJava,
   NodeJS: faNode,
-  Express: ["custom", "express"], // Custom icon
+  Express: ["custom", "express"],
   React: faReact,
   "React Native": faReact,
   Flutter: ["custom", "flutter"],
@@ -69,10 +71,12 @@ const skillIcons = {
   Linux: faLinux,
   VSCode: ["custom", "vscode"],
   Python: faPython,
-  ".NET": ["custom", "dotnet"], // Custom icon
-  "C#": ["custom", "csharp"], // Custom icon
-  Django: ["custom", "django"], // Custom icon
-  Windows: faWindows, // FontAwesome icon
+  ".NET": faWindows,
+  "C#": ["custom", "c"],
+  Django: faPython,
+  Windows: faWindows,
+  Tailwind: faCss3Alt,
+  "Node.js": faJsSquare,
 };
 
 // Define the desired order of categories

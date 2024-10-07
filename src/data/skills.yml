@@ -4,6 +4,7 @@ Languages:
   - HTML
   - CSS
   - SCSS
+  - Tailwind
   - C#
   - SQL
   - Python
@@ -16,4 +17,5 @@ Tools:
   - Git
   - Linux
   - VSCode
-  - CMS
+  - AEM
+  - Django CMS
