@@ -4,15 +4,16 @@ Languages:
   - HTML
   - CSS
   - SCSS
-  - Tailwind
   - C#
   - SQL
   - Python
 Frameworks:
   - React
   - Node.js
-  - .NET
+  - Tailwind
   - Django
+  - HTMX
+  - Alpine.js
 Tools:
   - Git
   - Linux

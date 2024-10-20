@@ -67,6 +67,8 @@ const skillIcons = {
   Flutter: ["custom", "flutter"],
   Git: faGitAlt,
   AWS: faAws,
+  HTMX: faHtml5,
+  "Alpine.js": faJsSquare,
   Firebase: ["custom", "firebase"],
   Linux: faLinux,
   VSCode: ["custom", "vscode"],

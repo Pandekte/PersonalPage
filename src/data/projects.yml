@@ -1,3 +1,11 @@
+- title: ApparelShop
+  description: >
+    E-commerce shop, coming soon!
+  resume_description: >
+    Django, HTMX, Alpine.js soon to be published.
+  url: https://github.com/Pandekte/ApparelShopPublic
+  image: "/PersonalPage/assets/img/ApparelShop.png"
+
 - title: DashTab
   description: >
     Homescreen with to-do list, responsive design & dark mode included.
