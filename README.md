@@ -19,7 +19,21 @@ Below, you'll find a detailed **Changelog** documenting all significant updates,
 
 All notable changes to this project are documented in this file.
 
-### [0.1.5] - 2024-10-02
+### [1.1.6] - 2024-10-21
+
+**Added**
+
+- **Apparel Shop Project:** Added new upcoming project, which will be developed in Django using HTMX and Alpine.js.
+
+**Changed**
+
+- **Skills adjustments:** Added new skills.
+
+**Fixed**
+
+- **Sleep Guardian image:** Adjusted display of the image for SleepGuardian Project.
+
+### [1.1.5] - 2024-10-02
 
 **Added**
 
@@ -38,7 +52,7 @@ All notable changes to this project are documented in this file.
 - **Sass Syntax Errors:** Resolved syntax issues in `variables.scss` to ensure proper compilation and functionality of media queries.
 - **Icon Integration Issues:** Fixed issues with custom icons not displaying correctly in the `SkillsList` component, ensuring all skills have corresponding functional icons.
 
-### [0.1.4] - 2024-10-01
+### [1.1.4] - 2024-10-01
 
 **Added**
 
@@ -53,14 +67,14 @@ All notable changes to this project are documented in this file.
 
 - **Initial Setup:** Ensured all necessary dependencies and configurations are correctly set up for React and Sass integration.
 
-### [0.1.3] - 2024-10-01
+### [1.1.3] - 2024-10-01
 
 **Added**
 
 - **Animated Headers:** Implemented animated headers using `opentype.js`, a JavaScript parser/writer for OpenType and TrueType fonts.
 - **Intersection Observer:** Triggered animations when the `IntersectionObserver` is activated.
 
-### [0.1.2] - 2024-10-01
+### [1.1.2] - 2024-10-01
 
 **Added**
 
@@ -78,7 +92,7 @@ All notable changes to this project are documented in this file.
 - **Heading Display Issues:** Resolved the issue where headings were not displaying correctly by removing conflicting p5.js logic and ensuring proper SCSS imports and class assignments.
 - **Responsive Design Enhancements:** Improved the responsiveness of heading elements to ensure they render appropriately across different screen sizes and devices.
 
-### [0.1.1.2] - 2024-10-01
+### [1.1.1.2] - 2024-10-01
 
 **Changed**
 
@@ -88,7 +102,7 @@ All notable changes to this project are documented in this file.
 
 - **Session Timeout:** Resolved an issue where user sessions expired too quickly by increasing the timeout duration.
 
-### [0.1.1.1] - 2024-09-30
+### [1.1.1.1] - 2024-09-30
 
 **Added**
 
