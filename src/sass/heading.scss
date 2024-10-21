@@ -53,14 +53,14 @@
   /* Tablet Adjustments */
   @include mq($tablet) {
     svg {
-      width: 10vh; // Reduced width for tablets
+      width: 10vh;
     }
   }
 
   /* Mobile Adjustments */
   @include mq($mobile) {
     svg {
-      width: 8vh; // Further reduced width for mobile devices
+      width: 8vh;
     }
   }
 }

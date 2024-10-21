@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; // Full viewport height
+  height: 100vh;
   background-color: $bg-color;
   color: $text-color;
   text-align: center;
@@ -45,7 +45,7 @@
     display: inline-block;
     transform-origin: bottom center;
     animation: wave 3s infinite;
-    font-size: 2rem; /* Adjust as needed */
+    font-size: 2rem;
   }
 }
 
@@ -94,7 +94,7 @@
   }
 }
 
-/* Responsive Adjustments (Optional) */
+/* Responsive Adjustments */
 @include mq($mobile) {
   .landing {
     h1 {

@@ -130,7 +130,7 @@ export default function SkillsList() {
     };
   }, [skills]);
 
-  // Handle keyboard reordering
+  // Handle keyboard reordering, need more work to make it reorder across all <li>
   const handleKeyDown = (e, index) => {
     if (e.key === "ArrowUp" && index > 0) {
       e.preventDefault();

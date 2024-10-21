@@ -2,9 +2,9 @@
 
 @use "./variables" as *;
 
-// Variables for easy adjustments
+// Variables
 $animation-duration: 20s;
-$number-of-cabins: 16; // Updated to 16
+$number-of-cabins: 16;
 $cabin-size: 15%;
 $cabin-spacing: 1rem;
 $wheel-border-width: 10px;
@@ -16,7 +16,7 @@ $text-color-hover: darken($text-color, 10%);
 
 .ferriswheel {
   position: fixed;
-  bottom: 1rem; // Added some spacing from the edge
+  bottom: 1rem;
   right: 1rem;
   width: 25%;
   max-width: 20rem;
@@ -32,7 +32,7 @@ $text-color-hover: darken($text-color, 10%);
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 100%; // Maintain aspect ratio
+    padding-bottom: 100%;
     border: $wheel-border-width solid $lightblue;
     border-radius: 50%;
     animation: spin $animation-duration $spin-timing-function infinite;
@@ -129,7 +129,6 @@ $text-color-hover: darken($text-color, 10%);
     height: 35vh;
     bottom: 0.5rem;
     right: 0.5rem;
-    // Optionally, adjust other properties for better mobile display
   }
 }
 

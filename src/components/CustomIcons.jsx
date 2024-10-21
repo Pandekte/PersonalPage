@@ -1,7 +1,5 @@
 // src/components/CustomIcons.jsx
 
-import React from "react";
-
 // Custom Icon Definitions
 export const CIcon = {
   icon: [
@@ -76,7 +74,6 @@ export const TypeScriptIcon = {
 };
 
 // New Custom Icons
-
 export const ExpressIcon = {
   prefix: "custom",
   iconName: "express",

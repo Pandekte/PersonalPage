@@ -1,7 +1,8 @@
 // src/components/FerrisWheel/FerrisWheel.jsx
 
 import React, { useState } from "react";
-import "./sass/_index.scss"; // Import the central Sass file
+// Import the central Sass file
+import "./sass/_index.scss";
 
 export default function FerrisWheel({ animationDuration = "20s", onHide }) {
   const [visible, setVisible] = useState(true);
@@ -311,8 +312,6 @@ export default function FerrisWheel({ animationDuration = "20s", onHide }) {
             d="M17.5,0c0,4.8-3.9,8.7-8.7,8.7S0,4.8,0,0H17.5z"
           />
         </g>
-
-        {/* Optional: Add more seats if needed */}
       </svg>
     </div>
   );

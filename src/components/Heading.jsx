@@ -2,20 +2,20 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import opentype from "opentype.js";
-import "../sass/heading.scss"; // Ensure this file exists and contains your styles
+import "../sass/heading.scss";
 
 export default function Heading({ children, animationDuration = "5s" }) {
   const svgRef = useRef(null);
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const fontPath = "assets/fonts/Roboto-Regular.ttf"; // Adjust the path to your font file
+    const fontPath = "assets/fonts/Roboto-Regular.ttf";
 
     let observer;
 
     // Function to initialize the SVG and animations
     const initSvg = (font) => {
-      const fontSize = 72; // You can adjust this value for uniform size
+      const fontSize = 72;
       const x = 0;
       const y = fontSize;
 
@@ -38,14 +38,14 @@ export default function Heading({ children, animationDuration = "5s" }) {
         if (pathElement) {
           const length = pathElement.getTotalLength();
 
-          // Set initial styles for the animation
+          // Initial styles for the animation
           pathElement.style.strokeDasharray = length;
           pathElement.style.strokeDashoffset = length;
           pathElement.style.fill = "transparent";
           pathElement.style.stroke = "#fff";
           pathElement.style.strokeWidth = "1px";
 
-          // Apply dynamic animation durations
+          // Dynamic animation durations
           // borderani animation
           pathElement.style.setProperty(
             "--animation-duration-borderani",

@@ -27,7 +27,7 @@ export default function Nav() {
             smooth={true}
             duration={500}
             onSetActive={handleSetActive}
-            offset={-70} // Optional: adjust for fixed header height
+            offset={-70}
           >
             <FontAwesomeIcon icon={faHouse} />
             <span>Home</span>
@@ -47,7 +47,6 @@ export default function Nav() {
             <span>Portfolio</span>
           </Link>
         </li>
-        {/* Add more nav items as needed */}
       </ul>
     </nav>
   );

@@ -3,7 +3,8 @@ import React from "react";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import "./sass/landing.scss"; // Import the Sass file for Landing styles
+// Import the Sass file for Landing styles
+import "./sass/landing.scss";
 
 export default function Landing() {
   return (

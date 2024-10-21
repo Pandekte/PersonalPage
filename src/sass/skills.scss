@@ -26,12 +26,12 @@
     .sortable-placeholder {
       background-color: lighten($bg-color, 10%);
       border: 2px dashed rgba($text-color, 0.4);
-      height: 2.5rem; // Adjust based on your li height
+      height: 2.5rem;
       border-radius: 8px;
-      width: 150px; // Adjust based on your li width
+      width: 150px;
     }
 
-    // Chosen item styling
+    // Item styling
     .sortable-chosen {
       background-color: lighten($bg-color, 5%);
     }
@@ -54,7 +54,7 @@
       border-radius: 8px;
       cursor: grab;
       transition: transform 0.2s, opacity 0.2s;
-      position: relative; // For focus outline
+      position: relative;
 
       &:active {
         cursor: grabbing;
@@ -64,8 +64,6 @@
       &:focus {
         outline: 2px solid darken($bg-color, 20%);
       }
-
-      /* Removed .drag-handle styles since it's no longer present */
 
       svg {
         margin-right: 0.5rem;
