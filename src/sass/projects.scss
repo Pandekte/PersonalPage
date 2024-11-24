@@ -17,6 +17,9 @@
         text-decoration: none;
 
         .card {
+          /* Maintain 16:9 aspect ratio */
+          aspect-ratio: 16 / 9;
+
           background-image: linear-gradient(
               rgba(0, 0, 0, 0.75),
               rgba(0, 0, 0, 0.75)
@@ -28,9 +31,11 @@
           align-items: center;
           background-color: $bg-color;
           background-size: cover;
+          background-position: center;
           color: $text-color;
           width: clamp(15rem, 16vw, 20rem);
-          height: 200px;
+          /* Remove fixed height to allow aspect-ratio to control height */
+          /* height: 200px; */
           padding: 1rem;
           border-radius: 12px;
           text-align: center;
@@ -88,9 +93,11 @@
     .projects-list li a .card {
       width: 100%;
       max-width: 100%;
-      height: auto;
+      /* Ensure aspect ratio is maintained on smaller screens */
+      aspect-ratio: 16 / 9;
+      /* Remove fixed height */
+      /* height: auto; */
       padding: 1.5rem;
-      height: 16vh;
 
       h4 {
         font-size: 1.2rem;
