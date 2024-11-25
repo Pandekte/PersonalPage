@@ -1,30 +1,22 @@
 - title: ApparelShop
   description: >
-    E-commerce shop, coming soon!
+    E-commerce shop, coming very soon!
   resume_description: >
-    Django, HTMX, Alpine.js soon to be published.
+    Django, HTMX, Alpine.js soon to be published!
   url: https://github.com/Pandekte/ApparelShopPublic
   image: "/PersonalPage/assets/img/ApparelShop.png"
 
-- title: New Tab Page - Dashboard
-  description: >
-    Customizable Homescreen with: to-do list, folders, privacy.
-  resume_description: >
-    Javascript, CSS, published in Chrome Web Store.
-  url: https://chromewebstore.google.com/detail/new-tab-page-home-screen/dmdeigebfbjbndnnaheobifpfnkhlgbo
-  image: "/PersonalPage/assets/img/DashTab.png"
-
-- title: DashTab Legacy
+- title: DashTab
   description: >
     Homescreen with to-do list, responsive design & dark mode included.
   resume_description: >
     Javascript, Bootstrap, published in Chrome Web Store.
   url: https://chromewebstore.google.com/detail/dashtab/ojpihaakeniapmjfbgnieieecpejlhid
-  image: "/PersonalPage/assets/img/DashTabLegacy.png"
+  image: "/PersonalPage/assets/img/DashTab.png"
 
 - title: Motivation Tool
   description: >
-    Inspirational quotes are displayed alongside age clock. Customizable pop ups.
+    Inspirational quotes are displayed alongside age clock.
   resume_description: >
     React, TypeScript, published in Chrome Web Store.
   url: https://chromewebstore.google.com/detail/motivation-tool-daily-quo/omcalcehddblccgmlmjdjapmahcibojj
