@@ -54,8 +54,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={faCircleDown} />
-          Resume
+          <FontAwesomeIcon icon={faCircleDown} />‎ Resume
         </a>
       </div>
     </section>
