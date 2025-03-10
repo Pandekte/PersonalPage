@@ -14,14 +14,6 @@
   url: https://chromewebstore.google.com/detail/new-tab-page-home-screen/dmdeigebfbjbndnnaheobifpfnkhlgbo
   image: "/PersonalPage/assets/img/DashTab.png"
 
-- title: DashTab
-  description: >
-    Simpler version of New Tab Page, compatible with android.
-  resume_description: >
-    Javascript, Bootstrap, published in Chrome Web Store.
-  url: https://chromewebstore.google.com/detail/dashtab/ojpihaakeniapmjfbgnieieecpejlhid
-  image: "/PersonalPage/assets/img/DashTabLegacy.png"
-
 - title: Motivation Tool
   description: >
     Inspirational quotes + age clock. Customizable pop ups.
