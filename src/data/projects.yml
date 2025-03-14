@@ -1,8 +1,8 @@
 - title: ApparelShop
   description: >
-    E-commerce shop utilizing Django, HTMX and Alpine.js, coming soon!
+    E-commerce shop utilizing Django, HTMX and Alpine.js.
   resume_description: >
-    Django, HTMX, Alpine.js using PostgreSQL, work in progress, soon to be published.
+    Django, HTMX, Alpine.js using PostgreSQL and Cloudinary.
   url: https://github.com/Pandekte/ApparelShopPublic
   image: "/PersonalPage/assets/img/ApparelShop.png"
 
