@@ -16,7 +16,7 @@ export default function Landing() {
         <span className="waving-hand" role="img" aria-label="waving hand">
           👋
         </span>{" "}
-        Hey! I'm Tomasz Marczyński, a full-stack developer.
+        Hey! I'm Tomasz Marczyński, a web developer.
       </p>
       {/* Animated Arrow Button */}
       <Link
