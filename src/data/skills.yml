@@ -3,7 +3,6 @@ Languages:
   - TypeScript
   - HTML
   - CSS
-  - SCSS
   - C#
   - SQL
   - Python
@@ -13,11 +12,8 @@ Frameworks:
   - Tailwind
   - Django
   - HTMX
-  - Alpine.js
 Tools:
   - Git
   - Linux
   - VSCode
-  - AEM
-  - Django CMS
   - Docker
